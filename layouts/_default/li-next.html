@@ -1,17 +1,15 @@
-<a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+<a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)"
   href="{{ .Permalink }}" class="card blog-card bc-next" rel="bookmark" >
-  {{ with .Resources.GetMatch "featuredImage" }}
+
+  {{ with .Params.image }}
   <div class="card-img-container">
-    <p class="card-img-overlay">Next Article</p>
+    <p class="card-img-overlay">往前一篇</p>
     <picture>
-      {{ $thumbnail := .Resize "400x Lanczos" }}
-      {{ $thumbnail_2 := .Resize "800x Lanczos" }}
-      {{ $thumbnail_3 := .Resize "1200x Lanczos" }}
-      <source srcset="{{ $thumbnail.Permalink }} 1x, {{ $thumbnail_2.Permalink }} 2x, {{ $thumbnail_3.Permalink }} 3x">
-      <img src="{{ $thumbnail.Permalink }}" class="card-img" {{ with .Params.description -}} alt="{{ . }}" {{- end }}>
+      <img src="https://moonbox.hotaru.me/{{ .version }}/{{ .name }}" class="card-img" {{ with .description -}} alt="{{ . }}" {{- end }}>
     </picture>
   </div>
   {{ end }}
+
   <article class="card-body">
     <h2 class="card-title">{{ .Title }}</h2>
     <p class="card-text">{{ if (isset .Params "description") }}{{ index .Params "description" | htmlUnescape }}{{ else }}{{ .Summary | plainify | htmlUnescape }}{{ end }}</p>
@@ -20,4 +18,5 @@
       {{ if (isset .Params "categories") }}<p>{{ range .Params.categories }}#{{ . }} {{ end }}</p>{{ end }}
     </div>
   </article>
+
 </a>

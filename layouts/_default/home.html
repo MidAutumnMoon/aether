@@ -8,11 +8,13 @@
     {{ partial "nav-bar.html" . }}
 
     <main class="card-container side-gutter">
-      {{ if or (not (eq .Description "")) (not (eq .Title "")) -}}
-      <header class="home-header" style="background-image: url('{{ "img/home-blob.svg" | absURL }}');">
+      {{/*}}
+      {{ if or (not (eq .Site.Params.Description "")) (not (eq .Site.Params.Brand "")) -}}
+      <!-- <header class="home-header" style="background-image: url('{{ (resources.GetMatch "home-blob.svg").Permalink }}');"> -->
+      <header class="home-header">
         <div class="home-blob-text-container">
-        {{ with .Title }}<h1 class="home-blob-title">{{ . }}</h1>{{ end }}
-        {{ with .Description }}<p class="home-blob-text">{{ . }}</p>{{ end }}
+        {{ with .Site.Params.Brand }}<h1 class="home-blob-title">{{ . }}</h1>{{ end }}
+        {{ with .Site.Params.Description }}<p class="home-blob-text">{{ . }}</p>{{ end }}
         </div>
         {{ with resources.GetMatch .Site.Params.headshotimg -}}
         <div class="home-faceshot-card">
@@ -27,6 +29,7 @@
         {{ end -}}
       </header>
       {{- end }}
+      {{*/}}
 
       {{ with .Content -}}
       <section class="list-header-content">

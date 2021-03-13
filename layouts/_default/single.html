@@ -14,24 +14,13 @@
           {{ if isset .Params "date" }}<p class="post-date">Posted <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>{{ end }}
         </header>
 
-        {{ with .Resources.GetMatch "featuredImage" -}}
+        {{ with .Params.image -}}
         <picture class="post-figure">
-          {{ $featured := .Resize "711x Lanczos" }}
-          {{ $featured_2 := .Resize "1422x Lanczos" }}
-          {{ $featured_3 := .Resize "2133x Lanczos" }}
-          <source srcset="{{ $featured.Permalink }} 1x, {{ $featured_2.Permalink }} 2x, {{ $featured_3.Permalink }} 3x">
-          <img src="{{ $featured.Permalink }}" {{ with .Params.description -}} alt="{{ . }}" {{- end }}>
+          <img src="https://moonbox.hotaru.me/{{ .version }}/{{ .name }}" alt=" {{ .description }}"/>
         </picture>
-        {{ with .Params.attribution -}}
-          <small>Image by&nbsp;
-            {{- with .link }}<a href="{{ . }}" target="_blank" rel="noreferrer noopener">{{ end -}}
-            {{- .name -}}
-            {{- with .link }}</a>{{ end -}}
-          </small>
-        {{- end }}
         {{- end }}
 
-        {{ if .Params.toc -}}
+        {{ if and .Site.Params.toc .Params.toc -}}
           <h2>Contents</h2>
           {{ .TableOfContents }}
         {{- end }}

@@ -48,7 +48,7 @@
 
   {{ template "_internal/google_analytics.html" . }}
 
-  {{ with resources.Get .Site.Params.bgimg -}}
+  {{ with resources.GetMatch .Site.Params.bgimg -}}
     <style>
       body {
         background-image: url("data:image/webp;base64,{{ .Content | base64Encode | safeCSS }}");
