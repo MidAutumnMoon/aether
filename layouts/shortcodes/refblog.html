@@ -1,0 +1,5 @@
+{{ $link := printf "//%s" (strings.TrimLeft "https://" (.Get "link")) | urls.Parse }}
+
+<a href="{{ $link }}" title=" {{ .Get "message" }}">
+  「{{ .Get "title" }}」<span style="color:#a4a4a4;">- {{ $link.Host }}</span>
+</a>
