@@ -164,6 +164,12 @@ p {
 .post-figure {
   margin: 1.5em 0;
 }
+.post-figure figcaption {
+  color: #a4a4a4;
+  font-size: 90%;
+  line-height: 0.3;
+  font-style: italic;
+}
 .dropcase > p:first-of-type::first-letter {
   float: left;
   font-size: 3em;
