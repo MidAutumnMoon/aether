@@ -1,8 +1,14 @@
 {{ with resources.Get "js/katex.js" }}
   <script defer src="{{ .Permalink }}"></script>
 {{ end }}
+
 {{ with resources.Get "js/auto-render.js" }}
   <script defer src="{{ .Permalink }}" onload="renderMathInElement(document.body);"></script>
 {{ end }}
-{{ $corejs := resources.Get "js/core.js" | minify }}
-<script src="{{ $corejs.Permalink }}"></script>
+
+{{ with (resources.Get "js/core.js" | minify) }}
+  <script src="{{ .Permalink }}"></script>
+{{ end }}
+
+<script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0" type="module" async="" crossorigin="anonymous"></script>
+
