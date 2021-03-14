@@ -3,7 +3,7 @@
 
   {{ with .Params.image }}
   <div class="card-img-container">
-    <p class="card-img-overlay">往前一篇</p>
+    <p class="card-img-overlay">更早一篇</p>
     <picture>
       <img src="https://moonbox.hotaru.me/{{ .version }}/{{ .name }}" class="card-img" {{ with .description -}} alt="{{ . }}" {{- end }}>
     </picture>
