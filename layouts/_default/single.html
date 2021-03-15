@@ -15,12 +15,12 @@
         </header>
 
         {{ with .Params.image -}}
-        <figure class="post-figure">
-          <img src="https://moonbox.hotaru.me/{{ .version }}/{{ .name }}" class="thumb-img" />
+        <picture class="post-figure">
+          <img src="https://moonbox.hotaru.me/{{ .version }}/{{ .name }}" />
           {{ if (ne .description "" )}}
           <figcaption>{{ .description | markdownify }}</figcaption>
           {{ end }}
-        </figure>
+        </picture>
         {{- end }}
 
         {{ if and .Site.Params.toc .Params.toc -}}
