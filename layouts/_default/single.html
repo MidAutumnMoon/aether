@@ -15,7 +15,7 @@
         </header>
 
         {{ with .Params.image -}}
-        <figure class="post-figure">
+        <figure class="post-figure thumb-img">
           <img src="https://moonbox.hotaru.me/{{ .version }}/{{ .name }}"/>
           {{ if (ne .description "" )}}
           <figcaption>{{ .description | markdownify }}</figcaption>
