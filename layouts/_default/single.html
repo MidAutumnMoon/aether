@@ -18,7 +18,7 @@
         <figure class="post-figure">
           <img src="https://moonbox.hotaru.me/{{ .version }}/{{ .name }}"/>
           {{ if (ne .description "" )}}
-          <figcaption>{{ .description }}</figcaption>
+          <figcaption>{{ .description | markdownify }}</figcaption>
           {{ end }}
         </figure>
         {{- end }}

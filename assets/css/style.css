@@ -166,9 +166,17 @@ p {
 }
 .post-figure figcaption {
   color: #a4a4a4;
-  font-size: 90%;
+  font-size: 70%;
   line-height: 1;
   font-style: italic;
+  margin-top: -1.3em;
+}
+.content-figure figcaption {
+  color: #a4a4a4;
+  font-style: italic;
+  font-size: 80%;
+  text-align: center;
+  margin-top: -1.3em;
 }
 .dropcase > p:first-of-type::first-letter {
   float: left;
