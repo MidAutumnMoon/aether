@@ -1,0 +1,10 @@
+{{ if and .Site.Params.enable_disqus (not (in .Site.BaseURL "localhost")) }}
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3/dist/disqusjs.css">
+  <div id="disqus_thread"></div>
+
+{{ else }}
+
+  <p>DisqusJS will not be enabled when site is previewed on localhost.</p>
+
+{{ end }}
