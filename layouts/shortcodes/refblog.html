@@ -1,5 +1,14 @@
+{{/*
+
+Usage:
+
+  <refblog link="http://blog.post" title="Some Article" link-title="Hidden message!">
+
+*/}}
+
+
 {{ $link := printf "//%s" (strings.TrimLeft "https://" (.Get "link")) | urls.Parse }}
 
-<a href="{{ $link }}" title=" {{ .Get "message" }}">
+<a href="{{ $link }}" title=" {{ .Get "link-title" }}">
   「{{ .Get "title" }}」<span style="color:#a4a4a4;">- {{ $link.Host }}</span>
 </a>
