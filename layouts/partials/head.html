@@ -46,7 +46,9 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
 
-  {{ template "_internal/google_analytics.html" . }}
+  {{ with resources.Get "img/bg-full.webp" }}
+    <link rel="preload" as="image" href="{{ .Permalink }}"/>
+  {{ end }}
 
   {{ with resources.GetMatch .Site.Params.bgimg -}}
     <style>
