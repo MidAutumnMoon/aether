@@ -46,9 +46,12 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
 
-  {{ with resources.Get "img/bg-full.webp" }}
+  {{ with resources.Get .Site.Params.bgimg_full }}
     <link rel="preload" as="image" href="{{ .Permalink }}"/>
   {{ end }}
+
+  <link rel="preconnect" href="https://shadow.elemecdn.com/" crossorigin>
+  <link rel="dns-prefetch" href="https://shadow.elemecdn.com/" >
 
   {{ with resources.GetMatch .Site.Params.bgimg -}}
     <style>

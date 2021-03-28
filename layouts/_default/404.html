@@ -13,15 +13,6 @@
           <h1 class="post-title">{{ .Title }}</h1>
         </header>
 
-        {{ with .Params.image -}}
-        <figure class="post-figure">
-          <img src="https://moonbox.hotaru.me/{{ .version }}/{{ .name }}"/>
-          {{ if (ne .description "" )}}
-          <figcaption>{{ .description }}</figcaption>
-          {{ end }}
-        </figure>
-        {{- end }}
-
         {{ .Content }}
       </article>
     </main>
