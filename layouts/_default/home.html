@@ -56,6 +56,11 @@
     </nav>
     {{- end }}
 
+    {{ with resources.Get .Site.Params.bgimg_full }}
+    <img src="{{ .Permalink }}" style="display: hidden"></img>
+    {{ end }}
+
+
     {{ partial "scripts.html" . }}
 
   </body>
