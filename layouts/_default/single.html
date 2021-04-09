@@ -16,7 +16,8 @@
 
         {{ with .Params.image -}}
         <picture class="post-figure">
-          <img src="https://shadow.elemecdn.com/npm/midbox@{{ .version }}/{{ .name }}" />
+          <!-- <img src="https://shadow.elemecdn.com/npm/midbox@{{ .version }}/{{ .name }}" /> -->
+          <img src="https://cdn.jsdelivr.net/npm/midbox@{{ .version }}/{{ .name }}" />
           {{ if (ne .description "" )}}
           <figcaption>{{ .description | markdownify }}</figcaption>
           {{ end }}

@@ -5,7 +5,8 @@
   {{ with .Params.image }}
   <div class="card-img-container">
     <picture>
-      <img src="https://shadow.elemecdn.com/npm/midbox@{{ .version }}/{{ .name }}" class="card-img" {{ with .description -}} alt="{{ . }}" {{- end }}>
+      <!-- <img src="https://shadow.elemecdn.com/npm/midbox@{{ .version }}/{{ .name }}" class="card-img" {{ with .description -}} alt="{{ . }}" {{- end }}> -->
+      <img src="https://cdn.jsdelivr.net/npm/midbox@{{ .version }}/{{ .name }}" class="card-img" {{ with .description -}} alt="{{ . }}" {{- end }}>
     </picture>
   </div>
   {{- end }}
