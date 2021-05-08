@@ -490,6 +490,7 @@ footer {
 @media only screen and (min-width: 40.063em) {
   body {
     font-size: 1.15rem;
+    max-width: 70%;
   }
   .home-header {
     flex-direction: row;
